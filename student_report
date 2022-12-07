@@ -1,0 +1,82 @@
+lcmkbc REPORT 
+********************************************
+************************* NAME ************************
+//Author: Logan Markley
+//Class: CS1575
+//Semester: Fall 2022
+//Due Date: Fri, 10/21/22
+
+
+using namespace std;
+
+//START - auxiliary functions ----- DONE
+
+template <class T>
+void ArrayList<T>::grow()
+{
+********************** COMPILE ************************
+************************  RUN   ************************
+Hello World!!, This is the KEY Tester
+#1 [ ] Size of a = 0
+#2 [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ] Size of a = 10
+#3 [ 1, 2, 3, 4, 5, 15, 16, 17, 18, 19, 20, 21, 6, 7, 8, 9, 10, ] Size = 17
+#4 a.first() = 1  a[5] = 15  a[10] = 20  a[13] = 7
+#5 [ 5, 10, 15, 20, 25, 75, 80, 85, 90, 95, 100, 105, 30, 35, 40, 45, 50, ]17
+#6 [ ] Size of a = 0
+#7 [ 0, 8, 16, 24, 32, 40, 48, 56, ] Size of a = 8
+#8 [ ] Size of a = 0
+#9 [ 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, ] Size of a = 10
+#10 [ 0, 5, 15, 20, 30, 35, 45, ] Size of a = 7
+#11 [ 0, 5, 15, 20, 30, 35, 45, ] -- [ 5, 15, 20, 30, 35, ] Size = 5
+#12 Size of a = 5, 15 @ 1, 30 @ 3, 50 @  -1
+#13 Size  = 1000, Cap = 1024** Size = 50, Cap = 128
+#14 
+a = [ a, b, c, d, e, f, g, h, i, j, ], b = [ ]
+a = [ a, b, c, d, e, f, g, h, i, j, ], b = [ a, b, c, d, e, f, g, h, i, j, ]
+a = [ a, b, c, d, e, f, g, h, i, j, ], b = [ k, l, m, n, e, f, g, h, i, j, ]
+#15 
+b = [ k, l, m, n, e, f, g, h, i, j, ], c = [ k, l, m, n, e, f, g, h, i, j, ]
+b = [ k, l, m, n, e, f, g, h, i, j, ], c = [ u, v, w, x, e, f, g, h, i, j, ]
+#16 [ a, b, c, d, e, f, g, h, a, b, c, d, e, f, g, h, a, b, c, d, ]  ;  [ d, c, b, a, h, g, g, h, a, b, c, d, e, f, f, e, d, c, b, a, ]
+#17 [ d, c, b, a, h, g, g, h, a, b, c, d, e, f, f, e, d, c, b, a, ]  ;  [ d, c, b, a, h, g, e, f, ]
+#18 [ d, c, b, a, h, g, e, f, ]  ;  [ f, e, g, h, a, b, c, d, ]
+a = [ 0, 3.14, 6.28, 9.42, 12.56, 15.7, 18.84, 21.98, 25.12, 28.26, ]
+b = [ ]
+#19 !!! ERROR : PANIC in ARRAYLIST !!!.first()  (List is empty)
+#20 a[5] = 15.7a[50] = !!! ERROR : PANIC in ARRAYLIST !!!.[]  (index out of bounds)
+0
+a = [ 0, 3.14, 6.28, 9.42, 12.56, 15.7, 18.84, 21.98, 25.12, 28.26, ], b = [ ]
+#21 a.insert(9.9, 20) : 
+!!! ERROR : PANIC in ARRAYLIST !!!.insert()  (index out of bounds)
+#22 a.remove(555) :
+!!! ERROR : PANIC in ARRAYLIST !!!.remove()  (index out of bounds)
+#23 a.swap(1,100) :
+!!! ERROR : PANIC in ARRAYLIST !!!.swap()  (index out of bounds)
+#24 a.swap(40,41) :
+!!! ERROR : PANIC in ARRAYLIST !!!.swap()  (index out of bounds)
+a = [ 0, 3.14, 6.28, 9.42, 12.56, 15.7, 18.84, 21.98, 25.12, 28.26, ]
+************************  DIFF   ************************
+29c29
+< 0
+---
+> -1.25763e-38
+************************  VALGRIND   ************************
+==10992==    by 0x4AA8165: __vfprintf_internal (vfprintf-internal.c:1687)
+==10992==    by 0x4ABA9C5: __vsnprintf_internal (vsnprintf.c:114)
+==10992==    by 0x494332E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10992==    by 0x49712EB: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10992==    by 0x497E7B9: std::ostream& std::ostream::_M_insert<double>(double) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10992==    by 0x10A28D: test05() (in /home/stcscpp/Documents/dropbox2/1575/22.3/hw2/lcmkbc/execexec)
+==10992==    by 0x10A4DC: main (in /home/stcscpp/Documents/dropbox2/1575/22.3/hw2/lcmkbc/execexec)
+==10992== 
+==10992== 
+==10992== HEAP SUMMARY:
+==10992==     in use at exit: 0 bytes in 0 blocks
+==10992==   total heap usage: 40 allocs, 40 frees, 89,278 bytes allocated
+==10992== 
+==10992== All heap blocks were freed -- no leaks are possible
+==10992== 
+==10992== Use --track-origins=yes to see where uninitialised values come from
+==10992== For lists of detected and suppressed errors, rerun with: -s
+==10992== ERROR SUMMARY: 15 errors from 10 contexts (suppressed: 0 from 0)
+**************************  Done! 
